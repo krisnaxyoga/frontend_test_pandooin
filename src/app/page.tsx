@@ -9,23 +9,23 @@ import PandooinWebsite from "./components/PandooinWebsite";
 import Article from "./components/Article";
 import Footer from "./components/Footer";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState } from "react";
 
 export default function Home() {
-  const queryClient = new QueryClient();
+  // Menggunakan useState untuk memastikan QueryClient tetap stabil
+  const [queryClient] = useState(() => new QueryClient());
 
   return (
     <main className="font-albert-sans bg-vista-white text-black">
       <Nav />
       <Hero />
-      <SectionMain/>
+      <SectionMain />
       <QueryClientProvider client={queryClient}>
-        <Destination/>
+        <Destination />
+        <Article />
       </QueryClientProvider>
       <LuxuryFottage />
       <PandooinWebsite />
-      <QueryClientProvider client={queryClient}>
-        <Article/>
-      </QueryClientProvider>
       <Footer />
     </main>
   );
