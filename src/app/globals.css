@@ -31,3 +31,17 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: 'the-signature';
+  src: url('/thesignature/Thesignature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'unbounded';
+  src: url('/unbounded/Unbounded-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
