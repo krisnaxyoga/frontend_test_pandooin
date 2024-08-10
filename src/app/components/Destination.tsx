@@ -64,7 +64,7 @@ export default function Destination() {
           </h2>
           <div className="w-fit flex items-center">
             <a
-              href=""
+              href="https://www.zamrood.com/destination"
               className="group w-fit inline-flex gap-4 items-center cursor-pointer"
             >
               <img
@@ -210,7 +210,7 @@ export default function Destination() {
                       itinerary.related_variant?.itinerary_variant_pub_price
                     )}
                   </span>
-                  <a href="#" className="mt-10">
+                  <a href="https://www.zamrood.com/destination" className="mt-10">
                     <button className="button text-center inline-flex justify-center items-center px-6 py-2.5 rounded-full capitalize font-bold text-sm lg:text-base transition-colors ease-in-out duration-300 bg-transparent text-dark-teal border-2 border-dark-teal hover:bg-dark-teal hover:text-vista-white hover:border-dark-teal ">
                       See Details
                     </button>

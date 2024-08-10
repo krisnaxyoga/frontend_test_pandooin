@@ -88,7 +88,7 @@ export default function SectionMain() {
           </p>
 
           <a href="https://pandooin.com/id/tailor-made/create" target="_blank">
-            <button className="button text-center inline-flex justify-center items-center px-6 py-2.5 rounded-full capitalize font-bold text-sm lg:text-base transition-colors ease-in-out duration-300 bg-dark-teal text-vista-white border-2 border-dark-teal hover:bg-tan hover:text-vista-white hover:border-tan !mt-6">
+            <button className="button text-center inline-flex justify-center items-center px-6 py-2.5 rounded-full capitalize font-bold text-sm lg:text-base transition-colors ease-in-out duration-300 bg-dark-teal text-vista-white border-2 border-dark-teal hover:bg-tan hover:text-vista-white hover:border-[#D6B66B] !mt-6">
               Customize Your Trip
             </button>
           </a>
