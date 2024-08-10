@@ -57,7 +57,7 @@ export default function Destination() {
 
   return (
     <>
-      <section id="Destination" className="p-4 w-full max-w-7xl mx-auto">
+      <section id="destination" className="p-4 w-full max-w-7xl mx-auto">
         <div className="py-6 w-full flex flex-col sm:flex-row items-start gap-6">
           <h2 className="my-auto w-fit text-left text-dark-teal font-unbounded font-bold text-[22px] lg:text-4xl">
             Destinations

@@ -105,7 +105,7 @@ export default function Nav() {
               ].map((text, index) => (
                 <a
                   key={index}
-                  href={`#${text.toLowerCase()}`}
+                  href={`#${text.toLowerCase().replace(/ /g, "-")}`}
                   className={`px-6 py-2.5 text-dark-teal text-base font-bold border-b-[2px] ${
                     index === 0
                       ? isScrolled
@@ -149,9 +149,9 @@ export default function Nav() {
               ].map((text, index) => (
                 <a
                   key={index}
-                  href={`#${text.toLowerCase()}`}
+                  href={`#${text.toLowerCase().replace(/ /g, "-")}`}
                   className={`px-6 py-2.5 text-base font-bold border-b-[2px] ${
-                     isScrolled
+                    isScrolled
                       ? "text-dark-teal border-transparent hover:border-dark-teal"
                       : "text-white border-transparent hover:border-white hover:text-white"
                   } transition-colors duration-300`}

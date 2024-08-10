@@ -17,14 +17,14 @@ export default function Home() {
     <main className="font-albert-sans bg-vista-white text-black">
       <Nav />
       <Hero />
-      <SectionMain />
+      <SectionMain/>
       <QueryClientProvider client={queryClient}>
-        <Destination />
+        <Destination/>
       </QueryClientProvider>
       <LuxuryFottage />
       <PandooinWebsite />
       <QueryClientProvider client={queryClient}>
-        <Article />
+        <Article/>
       </QueryClientProvider>
       <Footer />
     </main>
