@@ -46,7 +46,7 @@ export default function Nav() {
         <a href="#">
           <Image
             src={`${
-              isScrolled ? "/images/LogoZamrood-color.png" : "images/LogoZamrood-12.png"
+              isScrolled ? "/LogoZamrood-color.png" : "/LogoZamrood-12.png"
             }`}
             alt="Logo"
             width={150}
