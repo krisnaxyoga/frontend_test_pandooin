@@ -1,27 +1,33 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 
 export default function Article() {
-  const [Articles, setArticles] = useState<any[]>([]);
+  const fetchArticles = async () => {
+    const response = await fetch("https://pandooin.com/api/zamrood/article");
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await response.json();
+    return data.data;
+  };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://pandooin.com/api/zamrood/article"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await response.json();
-        setArticles(data.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const {
+    data: Articles = [],
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: ["articles"],
+    queryFn: fetchArticles,
+  });
 
-    fetchData();
-  }, []);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error fetching data: {error.message}</div>;
+  }
 
   return (
     <section className="px-4 lg:py-[72px] w-full max-w-7xl mx-auto flex flex-col space-y-6">
@@ -34,10 +40,10 @@ export default function Article() {
         </p>
       </div>
       <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
-        {Articles.map((article, index) => (
+        {Articles.map((article: any, index: number) => (
           <a
             key={article.id || index} // Use unique article ID if available
-            href= "#"// Assume each article has a URL
+            href="#" // Assume each article has a URL
             className={`w-full flex flex-col ${
               index % 5 === 0 ? "lg:row-span-2 lg:col-span-2" : ""
             }`}
