@@ -25,6 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.text-dark-aquaman {
+  --tw-text-opacity: 1;
+  color: rgb(11 115 115 / var(--tw-text-opacity));
+}
 
 @layer utilities {
   .text-balance {
