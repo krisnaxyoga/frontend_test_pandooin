@@ -90,6 +90,7 @@ export default function Destination() {
               className="grid grid-col-1 md:grid-cols-2 my-20 gap-5"
             >
               {isMobile ? (
+                <> 
                 <div
                   className={`w-full h-[300px] bg-[url('/Rectangle.png')] bg-cover bg-center`}
                 >
@@ -101,6 +102,54 @@ export default function Destination() {
                     className="object-cover object-center transition-all ease-in-out duration-300 h-full w-full"
                   />
                 </div>
+                <div className="flex flex-col">
+                    <span className="text-left text-xs lg:text-base">
+                      {itinerary.itinerary_day}{" "}
+                      {itinerary.itinerary_day > 1 ? "DAYS" : "DAY"}
+                    </span>
+                    <strong className="text-left text-dark-aquaman text-base lg:text-4xl font-bold line-clamp-2">
+                      {itinerary.itinerary_name}
+                    </strong>
+                    <span className="text-left text-dark-teal text-sm lg:text-base line-clamp-1 font-bold">
+                      Organized by {itinerary.partner_name}
+                    </span>
+                    <p className="text-left text-sm lg:text-base text-dark-teal line-clamp-4">
+                      {itinerary.itinerary_short_description}
+                    </p>
+                    <div className="mt-auto w-full inline-flex justify-between items-center">
+                      <div className="flex flex-col">
+                        <span className="text-left text-dark-teal text-xs lg:text-base">
+                          Start from
+                        </span>
+                        {itinerary.related_variant
+                          ?.itinerary_variant_disc_price != 0 ? (
+                          <span className="text-gray-400 line-through font-medium text-sm lg:text-3xl">
+                            IDR{" "}
+                            {new Intl.NumberFormat("id-ID").format(
+                              itinerary.related_variant
+                                ?.itinerary_variant_disc_price
+                            )}
+                          </span>
+                        ) : null}
+
+                        <span className="text-left font-unbounded text-dark-teal text-lg lg:text-[28px] font-medium">
+                          IDR{" "}
+                          {new Intl.NumberFormat("id-ID").format(
+                            itinerary.related_variant
+                              ?.itinerary_variant_pub_price
+                          )}
+                        </span>
+                      </div>
+                      <a href="#" className="mt-10">
+                        <button className="button text-center inline-flex justify-center items-center px-6 py-2.5 rounded-full capitalize font-bold text-sm lg:text-base transition-colors ease-in-out duration-300 bg-transparent text-dark-teal border-2 border-dark-teal hover:bg-dark-teal hover:text-vista-white hover:border-dark-teal ">
+                          See Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </>
+               
+                
               ) : (
                 <>
                   {index % 2 === 0 ? (
@@ -117,7 +166,7 @@ export default function Destination() {
                       />
                     </div>
                   ) : null}
-                  <div>
+                  <div className="flex flex-col">
                     <span className="text-left text-xs lg:text-base">
                       {itinerary.itinerary_day}{" "}
                       {itinerary.itinerary_day > 1 ? "DAYS" : "DAY"}

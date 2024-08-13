@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 export default function Article() {
   const [Articles, setArticles] = useState<any[]>([]);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {

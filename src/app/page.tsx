@@ -22,10 +22,10 @@ export default function Home() {
       <SectionMain />
       <QueryClientProvider client={queryClient}>
         <Destination />
+        <LuxuryFottage />
+        <PandooinWebsite />
         <Article />
       </QueryClientProvider>
-      <LuxuryFottage />
-      <PandooinWebsite />
       <Footer />
     </main>
   );
